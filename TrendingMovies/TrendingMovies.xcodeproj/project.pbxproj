@@ -10,6 +10,8 @@
 		7BB1EC1345BC150285FD044B /* Pods_TrendingMovies_TrendingMoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D16C45885143495D8621E6A /* Pods_TrendingMovies_TrendingMoviesUITests.framework */; };
 		CABC38F053E6EA322428A11E /* Pods_TrendingMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C22AE0174196BA4D771A7D4 /* Pods_TrendingMoviesTests.framework */; };
 		EA471F569E3F3B743BE66DF1 /* Pods_TrendingMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720F278225934638F5288E67 /* Pods_TrendingMovies.framework */; };
+		F74D60402F8C3355006841FA /* Movies-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = F74D603F2F8C3355006841FA /* Movies-SPM */; };
+		F74D605F2F8C430E006841FA /* NetworkLayer-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = F74D605E2F8C430E006841FA /* NetworkLayer-SPM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,22 +49,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F74D5FEA2F8C258C006841FA /* TrendingMovies */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = TrendingMovies;
 			sourceTree = "<group>";
 		};
 		F74D5FFA2F8C258E006841FA /* TrendingMoviesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = TrendingMoviesTests;
 			sourceTree = "<group>";
 		};
 		F74D60042F8C258E006841FA /* TrendingMoviesUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = TrendingMoviesUITests;
 			sourceTree = "<group>";
 		};
@@ -73,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74D60402F8C3355006841FA /* Movies-SPM in Frameworks */,
+				F74D605F2F8C430E006841FA /* NetworkLayer-SPM in Frameworks */,
 				EA471F569E3F3B743BE66DF1 /* Pods_TrendingMovies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,7 +114,6 @@
 				6D7F07862B3FA586D3AFBB2D /* Pods-TrendingMoviesTests.debug.xcconfig */,
 				427999045FC5017D6DB8D869 /* Pods-TrendingMoviesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -242,6 +239,10 @@
 			);
 			mainGroup = F74D5FDF2F8C258C006841FA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F74D603E2F8C3355006841FA /* XCLocalSwiftPackageReference "../Movies-SPM" */,
+				F74D605D2F8C430E006841FA /* XCLocalSwiftPackageReference "../NetworkLayer-SPM" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F74D5FE92F8C258C006841FA /* Products */;
 			projectDirPath = "";
@@ -700,6 +701,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F74D603E2F8C3355006841FA /* XCLocalSwiftPackageReference "../Movies-SPM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../Movies-SPM";
+		};
+		F74D605D2F8C430E006841FA /* XCLocalSwiftPackageReference "../NetworkLayer-SPM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../NetworkLayer-SPM";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F74D603F2F8C3355006841FA /* Movies-SPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Movies-SPM";
+		};
+		F74D605E2F8C430E006841FA /* NetworkLayer-SPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "NetworkLayer-SPM";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F74D5FE02F8C258C006841FA /* Project object */;
 }
