@@ -7,6 +7,8 @@
 
 import SwiftUI
 import SwiftData
+import NetworkLayer_SPM
+import Movies_SPM
 
 @main
 struct TrendingMoviesApp: App {
@@ -25,7 +27,7 @@ struct TrendingMoviesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+    
         }
         .modelContainer(sharedModelContainer)
     }

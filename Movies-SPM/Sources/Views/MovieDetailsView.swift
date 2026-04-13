@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import NetworkLayer_SPM
 
-struct MovieDetailsView: View {
+public struct MovieDetailsView: View {
     let movieId: Int
-    @StateObject private var vm = MovieDetailsViewModel(api: APIService())
+    @StateObject private var vm = MovieDetailsViewModel(api: ProductListService())
     
     var body: some View {
         ScrollView {

@@ -5,23 +5,31 @@ import PackageDescription
 
 let package = Package(
     name: "Movies-SPM",
+    
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Movies-SPM",
             targets: ["Movies-SPM"]
         ),
     ],
+    
+    dependencies: [
+        .package(path: "../NetworkLayer-SPM") // 👈 LOCAL PACKAGE
+    ],
+    
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Movies-SPM"
+            name: "Movies-SPM",
+            dependencies: [
+                .product(name: "NetworkLayer-SPM", package: "NetworkLayer-SPM")
+            ]
         ),
+        
         .testTarget(
             name: "Movies-SPMTests",
             dependencies: ["Movies-SPM"]
         ),
     ],
+    
     swiftLanguageModes: [.v6]
 )

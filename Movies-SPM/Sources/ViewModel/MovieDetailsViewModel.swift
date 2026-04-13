@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import NetworkLayer_SPM
 
-class MovieDetailsViewModel: ObservableObject {
+public class MovieDetailsViewModel: ObservableObject {
     @Published var movie: MovieDetails?
     
-    private let api: APIServiceProtocol
+    private let api: ProductListServiceable
     private var cancellables = Set<AnyCancellable>()
     
-    init(api: APIServiceProtocol) {
+    init(api: ProductListServiceable) {
         self.api = api
     }
     

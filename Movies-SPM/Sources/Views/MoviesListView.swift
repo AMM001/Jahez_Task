@@ -7,8 +7,12 @@
 
 import SwiftUI
 
-struct MoviesListView: View {
+public struct MoviesListView: View {
     @StateObject var vm: MoviesViewModel
+       
+       public init(vm: MoviesViewModel) {
+           self._vm = StateObject(wrappedValue: vm)
+       }
     
     var body: some View {
         NavigationView {

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import NetworkLayer_SPM
 
-class MoviesViewModel: ObservableObject {
+public class MoviesViewModel: ObservableObject {
     @Published var movies: [Movie] = []
     @Published var filteredMovies: [Movie] = []
     @Published var searchText: String = ""
