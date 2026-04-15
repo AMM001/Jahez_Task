@@ -16,25 +16,24 @@ import SwiftUI
 public class MoviesViewModel: ObservableObject {
 
     // MARK: - Published
-    @Published var movies: [Movie] = []
-    @Published var filteredMovies: [Movie] = []
-    @Published var searchText: String = ""
-    @Published var selectedGenres: Set<Int> = []
+    @Published public var movies: [Movie] = []
+    @Published public var filteredMovies: [Movie] = []
+    @Published public var searchText: String = ""
+    @Published public var selectedGenres: Set<Int> = []
     
-    @Published var genres: [Genre] = []
-    @Published var selectedGenre: Int?
-    @Published var isLoading: Bool = false
+    @Published public var genres: [Genre] = []
+    @Published public var selectedGenre: Int?
+    @Published public var isLoading: Bool = false
 
     // MARK: - Private
-    private let repo: MovieRepository
+    private let repo: MovieRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
     private var currentPage = 1
 
     // MARK: - Init
-    public init(repo: MovieRepository) {
+    public init(repo: MovieRepositoryProtocol) {
         self.repo = repo
         bind()
-        fetchMovies()
     }
 
     // MARK: - Bindings
@@ -59,7 +58,7 @@ public class MoviesViewModel: ObservableObject {
     }
 
     // MARK: - API
-    func fetchMovies() {
+    public func fetchMovies() {
         isLoading = true   // ✅ correct place
         repo.getMovies(page: currentPage)
             .receive(on: DispatchQueue.main)

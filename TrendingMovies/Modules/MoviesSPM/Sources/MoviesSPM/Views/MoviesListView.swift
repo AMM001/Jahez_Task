@@ -130,6 +130,9 @@ public struct MoviesListView: View {
             }
             .navigationBarHidden(true)
         }
+        .task {
+            vm.fetchMovies()
+        }
         .onTapGesture {
             isSearching = false
         }
