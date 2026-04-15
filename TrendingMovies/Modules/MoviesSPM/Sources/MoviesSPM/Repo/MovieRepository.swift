@@ -9,24 +9,33 @@ import Foundation
 import Combine
 import NetworkLayerSPM
 
+public protocol MovieRepositoryProtocol {
+    func getMovies(page: Int) -> AnyPublisher<[Movie], NetworkError>
+}
+
 // MARK: - Repository (Offline Support)
-public class MovieRepository {
+public class MovieRepository: MovieRepositoryProtocol {
+
     private let api: ProductListServiceable
     private var cache: [Movie] = []
-    
+
     public init(api: ProductListServiceable) {
         self.api = api
     }
-    
-    func getMovies(page: Int) -> AnyPublisher<[Movie], Error> {
-        return api.fetchMovies(page: page)
+
+    public func getMovies(page: Int) -> AnyPublisher<[Movie], NetworkError> {
+
+        api.fetchMovies(page: page)
             .map { [weak self] response in
-                self?.cache.append(contentsOf: response.results)
-                return self?.cache ?? []
+                guard let self else { return [] }
+                self.cache.append(contentsOf: response.results)
+                return self.cache
             }
-            .catch { [weak self] _ in
-                Just(self?.cache ?? []).setFailureType(to: Error.self)
-            }
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
+    }
+
+    public func resetCache() {
+        cache.removeAll()
     }
 }

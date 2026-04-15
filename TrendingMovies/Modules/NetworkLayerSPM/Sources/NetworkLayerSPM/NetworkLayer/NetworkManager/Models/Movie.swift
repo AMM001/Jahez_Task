@@ -7,9 +7,6 @@
 
 import Foundation
 
-// MARK: - Models
-import Foundation
-
 // MARK: - Movie Response
 
 public struct MovieResponse: Codable {
@@ -48,6 +45,23 @@ public struct Movie: Identifiable, Codable {
 
     public let adult: Bool
     public let video: Bool
+    
+   public init(id: Int, title: String, originalTitle: String, originalLanguage: String, overview: String, posterPath: String?, backdropPath: String?, releaseDate: String?, genreIds: [Int], popularity: Double, voteAverage: Double, voteCount: Int, adult: Bool, video: Bool) {
+        self.id = id
+        self.title = title
+        self.originalTitle = originalTitle
+        self.originalLanguage = originalLanguage
+        self.overview = overview
+        self.posterPath = posterPath
+        self.backdropPath = backdropPath
+        self.releaseDate = releaseDate
+        self.genreIds = genreIds
+        self.popularity = popularity
+        self.voteAverage = voteAverage
+        self.voteCount = voteCount
+        self.adult = adult
+        self.video = video
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
