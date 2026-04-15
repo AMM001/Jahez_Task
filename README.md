@@ -59,6 +59,10 @@ Handles all **networking logic**.
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url><img width="591" height="1280" alt="Unknown" src="https://github.com/user-attachments/assets/d5894e99-4bfb-435a-bb08-058ed9b46e98" />
+
+git clone
+
+<your-repo-url><img width="591" height="1280" alt="Unknown" src="https://github.com/user-attachments/assets/d5894e99-4bfb-435a-bb08-058ed9b46e98" />
+
 <img width="591" height="1280" alt="2" src="https://github.com/user-attachments/assets/bf1b89ce-ceb1-42ea-8600-e4d1c9295449" />
 
