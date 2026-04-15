@@ -7,8 +7,10 @@
 
 import SwiftUI
 import SwiftData
-import NetworkLayer_SPM
-import Movies_SPM
+import MoviesSPM
+import Combine
+import NetworkLayerSPM
+
 
 @main
 struct TrendingMoviesApp: App {
@@ -27,7 +29,8 @@ struct TrendingMoviesApp: App {
 
     var body: some Scene {
         WindowGroup {
-    
+        MoviesModule.makeMoviesListView()
+            
         }
         .modelContainer(sharedModelContainer)
     }
