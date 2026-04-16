@@ -17,9 +17,9 @@ public protocol ProductListServiceable {
 public class ProductListService: ProductListServiceable {
 
     private var networkRequest: Requestable
-    private var environment: Environment
+    private var environment: AppEnvironment
     
-    public init(network: Requestable = NativeRequestable(),environment: Environment = .development) {
+    public init(network: Requestable = NativeRequestable(),environment: AppEnvironment = .development) {
         self.networkRequest = network
         self.environment = environment
     }

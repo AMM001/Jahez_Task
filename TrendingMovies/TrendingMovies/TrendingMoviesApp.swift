@@ -14,24 +14,27 @@ import NetworkLayerSPM
 
 @main
 struct TrendingMoviesApp: App {
-    var sharedModelContainer: ModelContainer = {
+
+    // ✅ Shared SwiftData container
+    private let sharedModelContainer: ModelContainer
+
+    init() {
         let schema = Schema([
-            Item.self,
+            CachedMovie.self,
+            CachedMovieDetails.self
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            sharedModelContainer = try ModelContainer(for: schema)
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            fatalError("❌ Could not create ModelContainer: \(error)")
         }
-    }()
+    }
 
     var body: some Scene {
         WindowGroup {
-        MoviesModule.makeMoviesListView()
-            
+            MoviesModule.makeMoviesListView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(sharedModelContainer) // ✅ inject once
     }
 }

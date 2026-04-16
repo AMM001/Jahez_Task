@@ -12,6 +12,7 @@ public struct MoviesListView: View {
     
     @StateObject var vm: MoviesViewModel
     @FocusState private var isSearching: Bool
+    @Environment(\.modelContext) private var modelContext
     
     private let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -94,7 +95,12 @@ public struct MoviesListView: View {
                             ScrollView {
                                 LazyVGrid(columns: columns, spacing: 16) {
                                     ForEach(vm.filteredMovies) { movie in
-                                        NavigationLink(destination: MovieDetailsView(movieId: movie.id)) {
+                                        let service = ProductListService()
+                                        let repo = MovieRepository(
+                                            api: service,
+                                            modelContext: modelContext
+                                        )
+                                        NavigationLink(destination: MovieDetailsView(movieId: movie.id, vm: MovieDetailsViewModel(repo: repo))) {
                                             MovieCard(movie: movie)
                                         }
                                     }

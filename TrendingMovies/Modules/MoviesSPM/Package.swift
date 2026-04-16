@@ -7,7 +7,7 @@ let package = Package(
     name: "MoviesSPM",
 
     platforms: [
-        .iOS(.v15)
+        .iOS(.v17)
     ],
 
     products: [

@@ -53,18 +53,16 @@ public class MoviesViewModel: ObservableObject {
                     return matchesSearch && matchesGenre
                 }
             }
-            .receive(on: DispatchQueue.main)
             .assign(to: &$filteredMovies)
     }
 
     // MARK: - API
     public func fetchMovies() {
-        isLoading = true   // ✅ correct place
+        isLoading = true
         repo.getMovies(page: currentPage)
-            .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] _ in
-                    self?.isLoading = false   // ✅ stop loading even on error
+                    self?.isLoading = false
                 },
                 receiveValue: { [weak self] movies in
                     guard let self else { return }
