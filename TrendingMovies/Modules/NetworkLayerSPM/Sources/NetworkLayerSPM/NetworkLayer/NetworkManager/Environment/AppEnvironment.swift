@@ -1,5 +1,5 @@
 //
-//  Environment.swift
+//  AppEnvironment.swift
 //  check24-Task
 //
 //  Created by admin on 22/05/2023.
@@ -7,21 +7,14 @@
 
 import Foundation
 
-public enum Environment: String, CaseIterable {
+public enum AppEnvironment: String, CaseIterable {
     case development
     case staging
     case production
 }
 
-extension Environment {
-    
-//    var serviceBaseUrl: String {
-//        switch self {
-//        case .development, .staging, .production:
-//            return "https://api.themoviedb.org/3"
-//        }
-//    }
-    
+extension AppEnvironment {
+
     var serviceBaseUrl: URL {URL(string: "https://api.themoviedb.org/3")!}
     
     var apiKey: String {

@@ -29,7 +29,7 @@ enum ServiceEndpoints {
     }
     
     // compose the NetworkRequest
-    func createRequest(environment: Environment = .development) -> NetworkRequest {
+    func createRequest(environment: AppEnvironment = .development) -> NetworkRequest {
         var headers: Headers = [:]
         headers["Accept"] = "application/json"
         return NetworkRequest(url: getURL(from: environment), headers: headers, reqBody: requestBody, httpMethod: httpMethod)
@@ -44,7 +44,7 @@ enum ServiceEndpoints {
     }
     
     // compose urls for each request
-    func getURL(from environment: Environment) -> String {
+    func getURL(from environment: AppEnvironment) -> String {
         let baseUrl = environment.serviceBaseUrl
         let apiKey = environment.apiKey
         

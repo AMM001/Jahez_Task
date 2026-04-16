@@ -12,6 +12,8 @@
 		EA471F569E3F3B743BE66DF1 /* Pods_TrendingMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720F278225934638F5288E67 /* Pods_TrendingMovies.framework */; };
 		F73646542F8FB0210039931B /* MoviesSPM in Frameworks */ = {isa = PBXBuildFile; productRef = F73646532F8FB0210039931B /* MoviesSPM */; };
 		F73646572F8FB02F0039931B /* NetworkLayerSPM in Frameworks */ = {isa = PBXBuildFile; productRef = F73646562F8FB02F0039931B /* NetworkLayerSPM */; };
+		F73646832F905E7D0039931B /* NetworkLayerSPM in Frameworks */ = {isa = PBXBuildFile; productRef = F73646822F905E7D0039931B /* NetworkLayerSPM */; };
+		F73646862F905E8C0039931B /* MoviesSPM in Frameworks */ = {isa = PBXBuildFile; productRef = F73646852F905E8C0039931B /* MoviesSPM */; };
 		F736B0E32F8FA34E0039931B /* MoviesSPM in Frameworks */ = {isa = PBXBuildFile; productRef = F736B0E22F8FA34E0039931B /* MoviesSPM */; };
 		F736B0E62F8FA5420039931B /* MoviesSPM in Frameworks */ = {isa = PBXBuildFile; productRef = F736B0E52F8FA5420039931B /* MoviesSPM */; };
 		F736B0E92F8FA5510039931B /* NetworkLayerSPM in Frameworks */ = {isa = PBXBuildFile; productRef = F736B0E82F8FA5510039931B /* NetworkLayerSPM */; };
@@ -87,8 +89,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F736B0E62F8FA5420039931B /* MoviesSPM in Frameworks */,
+				F73646832F905E7D0039931B /* NetworkLayerSPM in Frameworks */,
 				F736B0E32F8FA34E0039931B /* MoviesSPM in Frameworks */,
 				F73646572F8FB02F0039931B /* NetworkLayerSPM in Frameworks */,
+				F73646862F905E8C0039931B /* MoviesSPM in Frameworks */,
 				F736B0E92F8FA5510039931B /* NetworkLayerSPM in Frameworks */,
 				F73646542F8FB0210039931B /* MoviesSPM in Frameworks */,
 				EA471F569E3F3B743BE66DF1 /* Pods_TrendingMovies.framework in Frameworks */,
@@ -260,8 +264,8 @@
 			mainGroup = F74D5FDF2F8C258C006841FA;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				F73646522F8FB0210039931B /* XCLocalSwiftPackageReference "Modules/MoviesSPM" */,
-				F73646552F8FB02F0039931B /* XCLocalSwiftPackageReference "Modules/NetworkLayerSPM" */,
+				F73646812F905E7D0039931B /* XCLocalSwiftPackageReference "Modules/NetworkLayerSPM" */,
+				F73646842F905E8C0039931B /* XCLocalSwiftPackageReference "Modules/MoviesSPM" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F74D5FE92F8C258C006841FA /* Products */;
@@ -725,13 +729,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		F73646522F8FB0210039931B /* XCLocalSwiftPackageReference "Modules/MoviesSPM" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Modules/MoviesSPM;
-		};
-		F73646552F8FB02F0039931B /* XCLocalSwiftPackageReference "Modules/NetworkLayerSPM" */ = {
+		F73646812F905E7D0039931B /* XCLocalSwiftPackageReference "Modules/NetworkLayerSPM" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Modules/NetworkLayerSPM;
+		};
+		F73646842F905E8C0039931B /* XCLocalSwiftPackageReference "Modules/MoviesSPM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Modules/MoviesSPM;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -743,6 +747,14 @@
 		F73646562F8FB02F0039931B /* NetworkLayerSPM */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkLayerSPM;
+		};
+		F73646822F905E7D0039931B /* NetworkLayerSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayerSPM;
+		};
+		F73646852F905E8C0039931B /* MoviesSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesSPM;
 		};
 		F736B0E22F8FA34E0039931B /* MoviesSPM */ = {
 			isa = XCSwiftPackageProductDependency;

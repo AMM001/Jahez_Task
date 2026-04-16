@@ -8,14 +8,30 @@
 import Foundation
 import NetworkLayerSPM
 import SwiftUI
+import SwiftData
 
 public struct MoviesModule {
-    
-    @MainActor public static func makeMoviesListView() -> some View {
-        let service = ProductListService()
-        let repo = MovieRepository(api: service)
-        let vm = MoviesViewModel(repo: repo)
-        
-        return MoviesListView(vm: vm)
+
+    public static func makeMoviesListView() -> some View {
+        MoviesRootView()
     }
 }
+
+struct MoviesRootView: View {
+
+    @Environment(\.modelContext)
+    private var modelContext
+    
+    var body: some View {
+        let service = ProductListService()
+        let repo = MovieRepository(
+            api: service,
+            modelContext: modelContext
+        )
+
+        MoviesListView(
+            vm: MoviesViewModel(repo: repo)
+        )
+    }
+}
+

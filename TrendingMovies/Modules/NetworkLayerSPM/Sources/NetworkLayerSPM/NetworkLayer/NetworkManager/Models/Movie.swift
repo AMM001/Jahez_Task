@@ -116,6 +116,23 @@ public struct MovieDetails: Identifiable, Codable {
     public let genres: [Genre]
     public let spokenLanguages: [Language]
     public let homepage: String?
+    
+   public init(id: Int, title: String, originalTitle: String, overview: String, posterPath: String?, backdropPath: String?, releaseDate: String, runtime: Int?, status: String, budget: Int, revenue: Int, genres: [Genre], spokenLanguages: [Language], homepage: String?) {
+        self.id = id
+        self.title = title
+        self.originalTitle = originalTitle
+        self.overview = overview
+        self.posterPath = posterPath
+        self.backdropPath = backdropPath
+        self.releaseDate = releaseDate
+        self.runtime = runtime
+        self.status = status
+        self.budget = budget
+        self.revenue = revenue
+        self.genres = genres
+        self.spokenLanguages = spokenLanguages
+        self.homepage = homepage
+    }
 
     enum CodingKeys: String, CodingKey {
         case id

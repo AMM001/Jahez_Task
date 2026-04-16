@@ -11,7 +11,12 @@ import NetworkLayerSPM
 
 public struct MovieDetailsView: View {
     let movieId: Int
-    @StateObject private var vm = MovieDetailsViewModel(api: ProductListService())
+    @ObservedObject private var vm:MovieDetailsViewModel
+    
+    init(movieId: Int, vm: MovieDetailsViewModel) {
+        self.movieId = movieId
+        self.vm = vm
+    }
     
     public var body: some View {
         ScrollView {

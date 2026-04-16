@@ -42,5 +42,27 @@ final class MockMovieRepository: MovieRepositoryProtocol {
             .setFailureType(to: NetworkError.self)
             .eraseToAnyPublisher()
     }
+    
+    func getMovieDetails(id: Int) -> AnyPublisher<NetworkLayerSPM.MovieDetails, NetworkLayerSPM.NetworkError> {
+        if shouldFail {
+            return Fail(
+                error: NetworkError.serverError(
+                    code: -1,
+                    error: "Mock failure"
+                )
+            )
+            .eraseToAnyPublisher()
+        }
+
+        let response: MovieDetails =
+            JSONLoader.load(
+                filename: jsonFileName,
+                bundle: Bundle(for: MockMovieRepository.self)
+            )
+
+        return Just(response)
+            .setFailureType(to: NetworkError.self)
+            .eraseToAnyPublisher()
+    }
 }
 

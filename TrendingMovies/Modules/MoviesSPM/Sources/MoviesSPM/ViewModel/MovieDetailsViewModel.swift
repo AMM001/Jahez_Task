@@ -12,15 +12,15 @@ import Combine
 public class MovieDetailsViewModel: ObservableObject {
     @Published var movie: MovieDetails?
     
-    private let api: ProductListServiceable
+    private let repo: MovieRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    init(api: ProductListServiceable = ProductListService()) {
-        self.api = api
+    init(repo: MovieRepositoryProtocol) {
+        self.repo = repo
     }
     
-    func fetch(id: Int) {
-        api.fetchMovieDetails(id: id)
+    @MainActor func fetch(id: Int) {
+        repo.getMovieDetails(id: id)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] movie in
                 self?.movie = movie
             })
