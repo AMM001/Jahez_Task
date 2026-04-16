@@ -2,7 +2,7 @@
 A list of trending movies [ SwiftUI &amp; Combine ] 
 
 
-# 🎬 Movies App (SwiftUI + SPM)
+# 🎬 Movies App (SwiftUI + SPM + SwiftData )
 
 A modular iOS Movies application built using **SwiftUI**, **Combine**, and **MVVM architecture**, with a strong focus on scalability and separation of concerns using **Swift Package Manager (SPM)**.
 
@@ -27,6 +27,8 @@ Responsible for the **presentation layer**.
 - MVVM (Model - View - ViewModel)
 - SwiftUI for UI
 - Combine for reactive bindings
+- swift Data [ cache ]
+- Unit Test 
 
 ---
 
